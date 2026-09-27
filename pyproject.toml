@@ -1,0 +1,22 @@
+[project]
+name = "trapsoul-researcher"
+version = "1.0.0"
+description = "Professional Hip Hop & R&B trend, keyword, title, lyric-concept and SEO research platform."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.30,<1",
+  "httpx>=0.27,<1",
+  "pydantic>=2.8,<3",
+  "python-dotenv>=1.0,<2"
+]
+[project.optional-dependencies]
+research = ["pytrends>=4.9,<5"]
+llm = ["openai>=1.50,<2"]
+dev = ["pytest>=8,<9", "ruff>=0.8,<1"]
+[project.scripts]
+trapsoul = "app.cli:main"
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
